@@ -2,10 +2,16 @@ import {useContext} from 'react'
 import qrcode from '../components/Assets/qrcode.png'
 import { ShopContext } from '../Context/ShopContext'
 import { Navigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const Payment = () => {
 const {getTotalCartItems}= useContext(ShopContext);
-if (getTotalCartItems() === 0) {
+const [cookies] = useCookies(["auth-token"]);
+
+if (!cookies["auth-token"]) {
+    return <Navigate to="/login" />;
+  }
+else if(getTotalCartItems() === 0) {
   return <Navigate to="/cart" />
 }
   return (

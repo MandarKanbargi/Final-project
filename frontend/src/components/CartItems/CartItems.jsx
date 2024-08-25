@@ -13,7 +13,7 @@ const CartItems = () => {
 
         }
         else{
-          navigate("/login");
+          navigate("/payment");
         }
     }
     return (
@@ -47,7 +47,7 @@ const CartItems = () => {
             })}
             <div className="cartitems-down">
                 <div className="cartitems-total">
-                    <h1>cart totals</h1>
+                    <h1>Cart Totals</h1>
                     <div>
                         <div className="cartitems-total-item">
                             <p>SubTotal</p>

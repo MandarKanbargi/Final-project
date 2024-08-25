@@ -2,6 +2,7 @@
 import './CSS/Loginsignup.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useCookies } from "react-cookie";
 
 const Loginsignup = () => {
   const [state, setState] = useState("Login");
@@ -11,6 +12,7 @@ const Loginsignup = () => {
     email: ""
   });
   const [error, setError] = useState('');
+  const [_, setCookie] = useCookies(["auth-token"]);
 
   const navigate = useNavigate(); // Initialize useNavigate
 
@@ -103,7 +105,8 @@ const ForgotPassword = () => {
       
       if (responseData.success) {
         localStorage.setItem("auth-token", responseData.token);
-        navigate("/payment"); // Redirect to payment page
+        setCookie("auth-token", responseData.token);
+        navigate("/"); // Redirect to payment page
       } else {
         alert(responseData.errors);
       }
@@ -130,7 +133,8 @@ const ForgotPassword = () => {
       
       if (responseData.success) {
         localStorage.setItem("auth-token", responseData.token);
-        navigate("/payment"); // Redirect to payment page
+        setCookie("auth-token", responseData.token);
+        navigate("/men"); // Redirect to payment page
       } else {
         alert(responseData.errors);
       }

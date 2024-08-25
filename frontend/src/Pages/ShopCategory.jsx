@@ -3,9 +3,16 @@ import './CSS/ShopCategory.css'
 import { ShopContext } from '../Context/ShopContext';
 import dropdown_icon from '../components/Assets/dropdown_icon.png'
 import Item from '../components/Item/Item'
+import { Navigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const ShopCategory = (props) => {
   const {all_product} = useContext(ShopContext);
+  const [cookies] = useCookies(["auth-token"]);
+
+  if (!cookies["auth-token"]) {
+    return <Navigate to="/login" />;
+  }
   
 
   return (

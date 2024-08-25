@@ -9,14 +9,16 @@
 }
 .cartitems-format-main{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 0.5fr;
     align-items: center;
     gap: 75px;
     padding: 20px 0px;
     color: #454545;
     font-size: 18px;
     font-weight: 600;
+    margin: 0px 0px 0px 60px;
 }
+    
 .cartitems-format{
     font-size: 17px;
     font-weight: 500;
@@ -38,7 +40,7 @@
 }
 .cartitems-down{
     display: flex;
-    margin: 100px 0px;
+    margin: 70px 0px 0px 50px;
 }
 .cartitems-total{
     flex: 1;
@@ -53,8 +55,8 @@
     padding: 15px 0px;
 }
 .cartitems-total button{
-    width: 262px;
-    height: 58px;
+    width: 300px;
+    height: 65px;
     outline: none;
     border: none;
     background: #ff5a5a;
@@ -68,7 +70,8 @@
     font-size: 16px;
     font-weight: 500;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 800px;
+    margin-bottom: 90px;
 }
 .cartitems-promo-code p{
     color: #555;

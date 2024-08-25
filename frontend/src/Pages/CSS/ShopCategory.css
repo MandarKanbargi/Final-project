@@ -22,6 +22,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 80px;
+    background: linear-gradient(180deg, #ece7dc 95%, #e1ffea22 30%);
 }
 /* .shopcategory-loadmore{
     display: flex;
